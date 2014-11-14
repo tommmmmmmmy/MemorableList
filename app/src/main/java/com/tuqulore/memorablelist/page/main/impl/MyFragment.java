@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.tuqulore.memorablelist.R;
+import com.tuqulore.memorablelist.ViewUtil;
 import com.tuqulore.memorablelist.page.main.MainApp;
 import com.tuqulore.memorablelist.page.main.MainUI;
 
