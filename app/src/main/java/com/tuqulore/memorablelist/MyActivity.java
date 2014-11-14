@@ -39,7 +39,7 @@ public class MyActivity extends ActionBarActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_archive) {
-            FragmentUtils.toNextFragment(getSupportFragmentManager(), R.id.container, new ArchiveFragment(), false);
+            FragmentUtils.toNextFragment(getSupportFragmentManager(), R.id.container, new ArchiveFragment(), true);
             return true;
         }
         return super.onOptionsItemSelected(item);
