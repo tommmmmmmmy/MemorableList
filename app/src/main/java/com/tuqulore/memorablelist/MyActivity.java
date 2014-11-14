@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.ActionBarActivity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,26 +14,15 @@ import android.widget.Button;
 
 public class MyActivity extends ActionBarActivity {
 
-    Button mNewBtn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my);
+        //setContentView(R.layout.activity_my);
 
-        View.OnClickListener mNewClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
-                intent.addCategory(Intent.CATEGORY_DEFAULT);
-                startActivityForResult(intent, 0);
-            }
-        };
-        mNewBtn = (Button)findViewById(R.id.btn_new);
-        mNewBtn.setOnClickListener(mNewClickListener);
+        LayoutInflater inflater = LayoutInflater.from(this);
+        View root = inflater.inflate(R.layout.activity_my, null);
+        setContentView(root);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -47,7 +37,7 @@ public class MyActivity extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_archive) {
             return true;
         }
         return super.onOptionsItemSelected(item);
